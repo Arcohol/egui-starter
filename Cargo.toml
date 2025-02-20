@@ -1,0 +1,7 @@
+[package]
+name = "egui-starter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.31.0"
