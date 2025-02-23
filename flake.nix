@@ -27,6 +27,17 @@
           mkShell rec {
             buildInputs = [
               pkg-config
+              xorg.libX11
+              xorg.libXcursor
+              xorg.libXrandr
+              xorg.libXi
+              xorg.libxcb
+              wayland
+              libxkbcommon
+              libGL
+            ];
+
+            packages = [
               (rust-bin.selectLatestNightlyWith (
                 toolchain:
                 toolchain.default.override {
@@ -37,14 +48,6 @@
                   ];
                 }
               ))
-              xorg.libX11
-              xorg.libXcursor
-              xorg.libXrandr
-              xorg.libXi
-              xorg.libxcb
-              libxkbcommon
-              vulkan-loader
-              wayland
               cargo-binutils
             ];
 
